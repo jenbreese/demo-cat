@@ -24,6 +24,7 @@
   .carousel-inner { margin-bottom: 15px; }
   .callout p { font-size: 12px; }
   .callout h4 { font-size: 15px; }
+  .announcements .carousel-control.left, .announcements .carousel-control.right { top: 10px; font-size: 20px; width: 2%; } 
 }
 @media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) { 
   .item .callout { padding: 5px; width: 99%; margin: 5px; min-height: 70px; overflow: visible; }
@@ -31,6 +32,7 @@
   .carousel-inner { margin-bottom: 15px; }
   .callout p { font-size: 12px; }
   .callout h4 { font-size: 15px; }
+  .announcements .carousel-control.left, .announcements .carousel-control.right { top: 10px; font-size: 20px; width: 2%; }
 }
 
 body {
@@ -379,6 +381,21 @@ footer .text-muted {
 
 .carousel-indicators .active {
   background-color: #d9534f;
+}
+
+.carousel-control.left, .carousel-control.right {
+  background: none;
+  color: #d9534f;
+  top: 50px;
+  font-size: 30px;
+}
+
+.carousel-control.left {
+  width: 3%;
+}
+
+.carousel-control.right {
+  width: 13%;
 }
 
 @import "login.less";
