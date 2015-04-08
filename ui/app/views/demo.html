@@ -18,7 +18,9 @@
         </div>
         <div ng-show="model.demo.features">
           <h4>Features</h4>
-          <span ng-repeat="feature in model.demo.features">{{feature}}</span>
+  <span ng-repeat="features in model.demo.features">{{features}}</span>
+
+          <more-less items="model.demo.features"></more-less>
         </div>
         <div ng-show="model.demo.technologies">
           <h4>Technologies Used</h4>
@@ -86,7 +88,7 @@
 
     <div ng-if="model.demo.media.length" class="media col-md-12">
       <h4>Media</h4>
-        <div ng-repeat="media in model.demo.media" class="text-center col-sm-3">
+        <div ng-repeat="media in model.demo.media track by $index" class="text-center col-sm-3">
           <div class="media-middle">
             <a ng-click="showMediaModal(media)">
               <img class="col-sm-12" ng-if="media.mediaType === 'image'" class="object-fit-cover" ng-src="{{trustUrl(media.mediaUrl)}}" />
@@ -184,7 +186,7 @@
         <div class="closed-bugs">
         <a href ng-show="!showClosedBugs" ng-click="showClosedBugs = true" class="btn btn-primary btn-sm">Expand</a>
         <a href ng-show="showClosedBugs" ng-click="showClosedBugs = false" class="btn btn-primary btn-sm">Collapse</a>
-        <div class="bug col-md-12" ng-show="showClosedBugs" ng-repeat="bug in model.demo. bugs | filter: { status: 'closed' }: true | orderBy:'-dateTime'" data-id="{{bug.id}}">
+        <div class="bug col-md-12" ng-show="showClosedBugs" ng-repeat="bug in model.demo.bugs | filter: { status: 'closed' }: true | orderBy:'-dateTime'" data-id="{{bug.id}}">
           <div>{{bug.msg}}</div>
           <ul class="bug-meta">
             <li class="bug-status">
